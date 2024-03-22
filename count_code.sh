@@ -72,6 +72,10 @@ if [ $outmode = "md" ]; then
         printf "| Usual day(s) | %'.0f |\n" $totdays
         let weeks=totdays/5
         printf "| Usual weeks(s) | %'.0f |\n" $weeks
+        let totprice=$totdays*477
+        printf "| If self dev | %'.0f CHF |\n" $totprice
+        let totprice=$totdays*1600
+        printf "| If outsourced dev | %'.0f CHF |\n" $totprice
 else
         echo "Project total:"
         printf "Lines:          %'.0f\n" $totlines
@@ -81,6 +85,12 @@ else
         printf "Usual day(s):   %'.0f\n" $totdays
         let weeks=totdays/5
         printf "Usual weeks(s): %'.0f\n" $weeks
+        let totprice=$totdays*477
+        printf "If self dev: %'.0f CHF\n" $totprice
+        let totprice=$totdays*1600
+        printf "If oursourced: %'.0f CHF\n" $totprice
+
 fi
 echo ""
 echo "Usual days of work are calculated as an average number of lines of code produced per an 8h day of work. Complex tasks may produce lot less code per day while easy task may produce more."
+echo "Costs are calculated based on the average cost of a developer in Switzerland (105’000 CHF) and the average cost of an outsourced developer (200 CHF/h). There is 220 working days in a year."

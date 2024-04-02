@@ -88,7 +88,7 @@ else
         let totprice=$totdays*477
         printf "If self dev: %'.0f CHF\n" $totprice
         let totprice=$totdays*1600
-        printf "If oursourced: %'.0f CHF\n" $totprice
+        printf "If outsourced: %'.0f CHF\n" $totprice
 
 fi
 echo ""
